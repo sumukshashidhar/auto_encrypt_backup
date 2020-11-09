@@ -25,6 +25,7 @@ def zipper(INPUT):
  
         os.system(cmd_string)
         cmd_remove_zip = 'rm {}.zip'.format(INPUT[1][:-1])
+        os.system(cmd_remove_zip)
 
     elif INPUT[0] == 1:
         cmd_zip = 'zip {}.zip {}'.format(INPUT[1], INPUT[1])
@@ -36,8 +37,6 @@ def zipper(INPUT):
 
         ## after execution, we try to encrypt it
     
-    cmd_remove_zip = 'rm {}.zip'.format(INPUT[1])
-
 
 
 if __name__ == "__main__":
