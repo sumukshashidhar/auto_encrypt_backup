@@ -10,6 +10,8 @@ The one stop shop for all your encrypted backup needs.
 def decrypt(PATH):
     cmd_decrypt = 'openssl aes-256-cbc -d -in {} -out {}'.format(PATH, PATH[:-4])
     os.system(cmd_decrypt)
+    cmd_remove_old = 'rm {}'.format(PATH)
+    os.system(cmd_remove_old)
 
 def zipper(INPUT):
     if INPUT[0] == 0:
