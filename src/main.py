@@ -11,10 +11,11 @@ def zipper(INPUT):
     if INPUT[0] == 0:
         # means that we're dealing with a folder
         cmd_zip = 'zip -r {}.zip {}'.format(INPUT[1], INPUT[1])
+        print("Running ", cmd_zip)
         os.system(cmd_zip)
-
+        
         ## after execution, we try to encrypt it
-        cmd_string = 'openssl enc aes-256-cbc -iter -salt -in {}.zip -out {}.zip.aes'.format(INPUT[1], INPUT[1])
+        cmd_string = 'openssl aes-256-cbc -in {}.zip -out {}.zip.aes'.format(INPUT[1], INPUT[1])
         print(cmd_string)
 
  
