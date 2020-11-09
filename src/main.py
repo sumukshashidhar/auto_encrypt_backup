@@ -24,6 +24,7 @@ if args.inputdir or args.file:
     else:
         INPUT = (1, args.file)
 else:
+    print("No Supplied Args, the file cannot run")
     sys.exit()
 
 
