@@ -15,7 +15,7 @@ def zipper(INPUT):
         os.system(cmd_zip)
         
         ## after execution, we try to encrypt it
-        cmd_string = 'openssl aes-256-cbc -in {}.zip -out {}.zip.aes'.format(INPUT[1], INPUT[1])
+        cmd_string = 'openssl aes-256-cbc -in {}.zip -out {}.zip.aes'.format(INPUT[1][:-1], INPUT[1][:-1])
         print(cmd_string)
 
  
