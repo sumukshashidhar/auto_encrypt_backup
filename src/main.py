@@ -8,7 +8,7 @@ The one stop shop for all your encrypted backup needs.
 """
 
 def decrypt(PATH):
-    cmd_decrypt = 'openssl aes-256-cbc -d -in {} -out {}'.format{PATH, PATH[:-4]}
+    cmd_decrypt = 'openssl aes-256-cbc -d -in {} -out {}'.format(PATH, PATH[:-4])
     os.system(cmd_decrypt)
 
 def zipper(INPUT):
