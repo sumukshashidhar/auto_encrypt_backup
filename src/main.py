@@ -1,15 +1,9 @@
-class Backup:
-    def __init__(self):
-        """
-        Main Init Class for the Program. Very Program based architecture
-        """
-        # ask the user for the input directory for the program
-        self.dirs = input("Enter the Input Directory")
-                
+import argparse
 
-
-
-
-
-if __name__=="__main__":
-    Backup()
+## init parser
+PARSER_DOCSTRING = """
+Welcome to NCryptBack.
+The one stop shop for all your encrypted backup needs
+"""
+parser = argparse.ArgumentParser(description=PARSER_DOCSTRING)
+parser.parse_args()
