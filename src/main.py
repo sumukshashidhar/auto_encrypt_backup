@@ -55,6 +55,7 @@ if __name__ == "__main__":
         else:
             INPUT = (1, args.file)
     else:
+        if args.
         print("NCrypt needs args to run")
         sys.exit()
     
