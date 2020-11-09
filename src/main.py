@@ -43,7 +43,7 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--inputdir", help="The Input Directory")
     parser.add_argument("-f", "--file", help="An Input File to Encrypt")
     parser.add_argument("-o", "--out", help="The output file")
-
+    parser.add_argument("-d", "--decrypt", help="Path to encrypted file")
     args = parser.parse_args()
 
     # after recieving the arguments, they must be parsed
@@ -55,9 +55,12 @@ if __name__ == "__main__":
         else:
             INPUT = (1, args.file)
     else:
-        if args.
-        print("NCrypt needs args to run")
-        sys.exit()
+        if args.decrypt:
+            decrypt(args.decrypt)
+        else:
+
+            print("NCrypt needs args to run")
+            sys.exit()
     
     zipper(INPUT)
 
