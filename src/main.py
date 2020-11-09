@@ -4,8 +4,8 @@ class Backup:
         Main Init Class for the Program. Very Program based architecture
         """
         # ask the user for the input directory for the program
-        dirs = input("Enter the Input Directory")
-        
+        self.dirs = input("Enter the Input Directory")
+                
 
 
 
