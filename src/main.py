@@ -24,6 +24,7 @@ def zipper(INPUT):
 
  
         os.system(cmd_string)
+        cmd_remove_zip = 'rm {}.zip'.format(INPUT[1][:-1])
 
     elif INPUT[0] == 1:
         cmd_zip = 'zip {}.zip {}'.format(INPUT[1], INPUT[1])
@@ -31,9 +32,11 @@ def zipper(INPUT):
         cmd_string = 'openssl enc aes-256-cbc -iter -salt -in {}.zip -out {}.zip.aes'.format(INPUT[1], INPUT[1])
         # means that we're dealing with a folder
         os.system(cmd_string)
+        cmd_remove_zip = 'rm {}.zip'.format(INPUT[1])
 
         ## after execution, we try to encrypt it
-
+    
+    cmd_remove_zip = 'rm {}.zip'.format(INPUT[1])
 
 
 
@@ -54,6 +57,8 @@ if __name__ == "__main__":
             INPUT = (0, args.inputdir)
         else:
             INPUT = (1, args.file)
+
+        zipper(INPUT)
     else:
         if args.decrypt:
             decrypt(args.decrypt)
@@ -62,6 +67,5 @@ if __name__ == "__main__":
             print("NCrypt needs args to run")
             sys.exit()
     
-    zipper(INPUT)
 
 
