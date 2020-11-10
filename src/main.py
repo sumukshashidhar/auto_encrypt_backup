@@ -42,24 +42,46 @@ def encrypt(PATH):
     os.system(encrypt_string_cmd)
 
 
-def zipper(INPUT):
+def zipper(PATH, path_type):
     """Given a directory or a file, zips it
 
     Args:
         INPUT (string): path to the directory
     """
-    if INPUT[0] == 0:
+    if path_type == 0:
         # means that we're dealing with a folder
-        zip_cmd = f'zip -r {INPUT[1][:-1]}.zip {INPUT[1]}'
+        zip_cmd = f'zip -r {PATH[:-1]}.zip {PATH[1]}'
 
-    elif INPUT[0] == 1:
-        zip_cmd = f'zip {INPUT[1]}.zip {INPUT[1]}'
+    elif path_type == 1:
+        zip_cmd = f'zip {PATH}.zip {PATH}'
 
     os.system(zip_cmd)
 
 
+def encryptor_class(INPUT):
+    """Completes the entire encryption given a file path
 
-def encryptor_class
+    Args:
+        INPUT (tuple): a tuple containing the type of file and the path
+    """
+    # first, let us zip the file
+    zipper(INPUT[1], INPUT[0])
+    # after zipping, we need to encrypt the file
+    encrypt(INPUT)
+    # remove the old file after encryption
+    remove_old_zip(INPUT)
+
+
+def decryptor_class(INPUT):
+    """Completes the entire decryption given a file path
+
+    Args:
+        INPUT (string): path to the .zip.aes file
+    """
+    # after zipping, we need to encrypt the file
+    decrypt(INPUT)
+    # remove the old file after encryption
+    remove_old_zip(INPUT)
 
 
 if __name__ == "__main__":
