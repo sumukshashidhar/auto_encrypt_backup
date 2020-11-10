@@ -50,7 +50,7 @@ def zipper(INPUT):
     """
     if INPUT[0] == 0:
         # means that we're dealing with a folder
-        cmd_zip = 'zip -r {}.zip {}'.format(INPUT[1][:-1], INPUT[1])
+        cmd_zip = f'zip -r {INPUT[1][:-1]}.zip {INPUT[1]}'
         print("Running ", cmd_zip)
         os.system(cmd_zip)
         # after execution, we try to encrypt it
