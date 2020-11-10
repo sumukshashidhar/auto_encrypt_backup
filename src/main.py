@@ -50,28 +50,16 @@ def zipper(INPUT):
     """
     if INPUT[0] == 0:
         # means that we're dealing with a folder
-        cmd_zip = f'zip -r {INPUT[1][:-1]}.zip {INPUT[1]}'
-        print("Running ", cmd_zip)
-        os.system(cmd_zip)
-        # after execution, we try to encrypt it
-        cmd_string = 'openssl aes-256-cbc -in {}.zip -out {}.zip.aes'.format(
-            INPUT[1][:-1], INPUT[1][:-1])
-        print(cmd_string)
-
-        os.system(cmd_string)
-        remove_old_zip = 'rm {}.zip'.format(INPUT[1][:-1])
-        os.system(remove_old_zip)
+        zip_cmd = f'zip -r {INPUT[1][:-1]}.zip {INPUT[1]}'
 
     elif INPUT[0] == 1:
-        cmd_zip = 'zip {}.zip {}'.format(INPUT[1], INPUT[1])
-        os.system(cmd_zip)
-        cmd_string = 'openssl enc aes-256-cbc -iter -salt -in {}.zip -out {}.zip.aes'.format(
-            INPUT[1], INPUT[1])
-        # means that we're dealing with a folder
-        os.system(cmd_string)
-        remove_old_zip = 'rm {}.zip'.format(INPUT[1])
+        zip_cmd = f'zip {INPUT[1]}.zip {INPUT[1]}'
 
-        # after execution, we try to encrypt it
+    os.system(zip_cmd)
+
+
+
+def encryptor_class
 
 
 if __name__ == "__main__":
